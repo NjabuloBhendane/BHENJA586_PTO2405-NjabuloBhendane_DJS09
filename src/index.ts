@@ -2,6 +2,9 @@
 // Write a function that will only accept numbers and attend to
 // all TypeScript weakness flags.
 // : number
+
+const returningUserDisplay = document.querySelector('#returning-user')
+const userNameDisplay = document.querySelector('#user')
 const reviewTotalDisplay = document.querySelector("#reviews");
 
 const reviews = [
@@ -32,3 +35,17 @@ function showReviewTotal ( value: number , reviewer: string , isLoyalty: boolean
   reviewTotalDisplay.innerHTML =' review total ' + value.toString() + '| last reviewed by ' + reviewer + iconDisplay
 }
 showReviewTotal(reviews.length , reviews[0].name , reviews[0].loyaltyUser)
+
+const you = {
+  userName: 'Njabulo',
+  isReturning: true ,
+}
+
+function populateUser(isReturning : boolean, userName: string ) {
+  if (isReturning){
+      returningUserDisplay.innerHTML = 'back'
+  }
+  userNameDisplay.innerHTML = userName
+}
+
+populateUser(you.isReturning, you.userName)
